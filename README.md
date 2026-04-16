@@ -24,7 +24,10 @@ X11 provê primitivas gráficas mas não provê janelas, botões e outros elemen
 
 Com a informação até aqui, dá para acreditar que instalar XFCE sobre Termux:X11 é suficiente para executar o Logisim... desde que a implementação de Java para Termux dê suporta a interface gráfica através de X11 o que parece que é verdade. 
 
-A alternativa seria instalar uma distribuição Linux usando Proot ou CHRoot... agora entendi para que Proot serve (simular que o usuário padrão do Termux é root através da implementação dos comandos de root, é parecido com um container). Sim, Android tem modo root e (acho que) Termux é capaz de aproveitar essa característica mas habilitar o modo root no Android tem efeitos na garantia e na segurança (Knox) em certas marcas de telefone celular por isso não pretendo tentar um root de verdade).
+![](./Captura%20de%20tela%20de%202026-04-16%2011-34-41.png)
+
+
+Caso não funcione, a alternativa seria instalar uma distribuição Linux usando Proot ou CHRoot... agora entendi para que Proot serve (simular que o usuário padrão do Termux é root através da implementação dos comandos de root, é parecido com um container ou um venv). Sim, Android tem modo root e (acho que) Termux é capaz de aproveitar essa característica mas habilitar o modo root no Android tem efeitos na garantia e na segurança (Knox) em certas marcas de telefone celular por isso não pretendo tentar um root de verdade).
 
 
 
