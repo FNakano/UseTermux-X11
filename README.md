@@ -1,3 +1,22 @@
+# Consegui executar (abrir) o Logisim Evolution com Termux:X11
+
+Uso um S24FE, nele instalei Termux, documentei em https://github.com/FNakano/IP-Apostila/tree/main/InstalarTermux .
+
+Em seguida, segui as instruções do gemini, que reproduzo abaixo:
+
+1. No celular, baixar e instalar a versão mais recente do Termux:X11 Companion app;
+   - O App Termux:X11 equivale a uma tela de um computador. Nessa tela o ambiente gráfico (ex. XFCE) será exibido. 
+   1. Go to the Termux:X11 GitHub Releases page: github.com/termux/termux-x11/releases.Download the .apk that matches your device's architecture (app-arm64-v8a-debug.apk no S24FE). Para instalar tem que desativar alguns bloqueios de segurança no android.
+2. No celular, iniciar o Termux, atualizar os pacotes e instalar Termux:X11 e XFCE;
+   1. Update package lists - execute `pkg update && pkg upgrade`
+   2. Install the X11 repository and the Termux:X11 package - execute
+      1. `pkg install x11-repo`
+      2. `pkg install termux-x11-nightly`
+      3. `pkg install xfce4`
+3. Abrir o Companion app - isto vai criar um console gráfico que receberá os comandos vindos do Termux. Voltando ao Termux, executar `termux-x11 :1 -xstartup "dbus-launch --exit-with-session xfce4-session"` - isto vai iniciar o servidor X com XFCE e enviar as mensagens gráficas para o console, consequentemente o console do X11 Companion App vai mostrar uma janela XFCE.
+4. Na janela xfce, CTRL-ALT-T abre um terminal por onde executei `pkg install jdk21`, entrei na pasta storage/downloads e executei `java -jar logisim-evolution-4.1.0-all.jar`
+   - Notei que há algum problema com a troca de foco dentro e fora do Companion App. Quando uso algum aplicativo do Android, trocando o foco, e volto para o Companion App, os eventos de mouse, como os botões de maximizar, param de funcionar. Por sorte, os atalhos de teclado continuam funcionando então abrir um novo terminal restaura o funcionamento dos eventos de mouse.
+
 # Meu diário sobre como usar Termux:X11
 
 Desejo executar Logisim usando Termux.
@@ -29,5 +48,10 @@ Com a informação até aqui, dá para acreditar que instalar XFCE sobre Termux:
 
 Caso não funcione, a alternativa seria instalar uma distribuição Linux usando Proot ou CHRoot... agora entendi para que Proot serve (simular que o usuário padrão do Termux é root através da implementação dos comandos de root, é parecido com um container ou um venv). Sim, Android tem modo root e (acho que) Termux é capaz de aproveitar essa característica mas habilitar o modo root no Android tem efeitos na garantia e na segurança (Knox) em certas marcas de telefone celular por isso não pretendo tentar um root de verdade).
 
+### Outras anotações
+
+Mudar o tamanho da fonte no termux pode ser feito com *pinch to zoom* ou com CTRL-ALT-+ é diferente do terminal do Linux que é CTRL-SHIFT-+ .
+
+O modo DEX não é iniciado automaticamente quando não é detectada tela, seja com fio, seja sem fio. Quando o hub usb tem conectada a tela através do conector HDMI e o carregador através do conector usb-c e, depois, é ligado ao telefone (S24FE) a tela não é detectada. Desligando o carregador a tela é detectada e, então, o carregador pode ser conectado.
 
 
