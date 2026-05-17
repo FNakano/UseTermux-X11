@@ -1,5 +1,15 @@
 # Consegui executar (abrir) o Logisim Evolution com Termux:X11
 
+## Instruções para execução (tudo já instalado)
+
+1. No celular, abrir o Termux:X11 Companion app - isto vai criar um console gráfico que receberá os comandos vindos do servidor X;
+2. Abrir o termux, executar `termux-x11 :1 -xstartup "dbus-launch --exit-with-session xfce4-session"` - isto vai iniciar o servidor X com XFCE e enviar as mensagens gráficas para o companion app (console), consequentemente o console do X11 Companion App vai mostrar uma janela XFCE.
+4. Na janela xfce, CTRL-ALT-T abre um terminal
+5. Executar `cd storage/downloads`
+6. Executar `java -jar logisim-evolution-4.1.0-all.jar` - a janela do logisim-evolution deve abrir.
+
+## Instruções para instalação
+
 Uso um S24FE, nele instalei Termux, documentei em https://github.com/FNakano/IP-Apostila/tree/main/InstalarTermux .
 
 Em seguida, segui as instruções do gemini, que reproduzo abaixo:
